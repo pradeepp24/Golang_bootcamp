@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
-	"retail_shop/Config"
+	"shop/Config"
 )
 
 var (

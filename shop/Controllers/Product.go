@@ -3,7 +3,7 @@ package Controllers
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"retail_shop/Models"
+	"shop/Models"
 )
 
 func GetProducts(c *gin.Context) {

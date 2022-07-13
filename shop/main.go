@@ -4,9 +4,9 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"retail_shop/Config"
-	"retail_shop/Models"
-	"retail_shop/Routers"
+	"shop/Config"
+	"shop/Models"
+	"shop/Routers"
 )
 
 var err error

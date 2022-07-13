@@ -1,6 +1,6 @@
 package Models
 
-import "retail_shop/Config"
+import "shop/Config"
 
 func GetAllProducts(product *[]Product) (err error) {
 	if err = Config.DB.Find(product).Error; err != nil {

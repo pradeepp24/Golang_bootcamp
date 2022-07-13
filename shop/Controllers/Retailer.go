@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"retail_shop/Models"
+	"shop/Models"
 )
 
 func CreateProduct(c *gin.Context) {

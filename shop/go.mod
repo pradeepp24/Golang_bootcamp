@@ -1,4 +1,4 @@
-module retail_shop
+module shop
 
 go 1.18
 

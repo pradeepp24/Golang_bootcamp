@@ -2,7 +2,7 @@ package Routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"retail_shop/Controllers"
+	"shop/Controllers"
 )
 
 //SetupRouter ... Configure routes

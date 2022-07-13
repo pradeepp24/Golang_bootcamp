@@ -2,7 +2,7 @@ package Models
 
 import (
 	"fmt"
-	"retail_shop/Config"
+	"shop/Config"
 )
 
 func GetAllOrders(order *[]Order) (err error) {

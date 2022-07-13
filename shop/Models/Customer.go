@@ -3,8 +3,8 @@ package Models
 import (
 	"errors"
 	"fmt"
-	"retail_shop/Config"
-	"retail_shop/Redis"
+	"shop/Config"
+	"shop/Redis"
 	"strconv"
 	"time"
 )
@@ -33,13 +33,14 @@ func PlaceOrder(order *Order, id uint) (err error) {
 	customerId := order.CustomerId
 	productId := order.ProductId
 	quantity := order.Quantity
-	LockPeriod := 3000
+	LockPeriod := 30000
 	value := "product_id"
 	var key = strconv.FormatUint(uint64(productId), 10)
 	if isLocked, _ := Redis.Lock(key, value, LockPeriod); !isLocked {
 		err := errors.New("ErrorMessage : Lock is Already Acquired")
 		return err
 	}
+	time.Sleep(10 * time.Second)
 	defer Redis.Unlock(key, value)
 
 	if err = Config.DB.Where("customer_id = ?", customerId).First(&customer).Error; err != nil {

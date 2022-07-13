@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"retail_shop/Models"
+	"shop/Models"
 )
 
 //grp1.POST("customer/register", Controllers.RegisterCustomer)
@@ -21,9 +21,15 @@ func GetCustomers(c *gin.Context) {
 	}
 }
 
+type ProductsIds struct {
+	prodIds []int `json:"ProdIds"`
+}
+
 func PlaceOrder(c *gin.Context) {
 	var order Models.Order
+
 	c.BindJSON(&order)
+
 	id := order.CustomerId
 	fmt.Println(id)
 	err := Models.PlaceOrder(&order, id)
@@ -35,6 +41,7 @@ func PlaceOrder(c *gin.Context) {
 		c.JSON(http.StatusOK, order)
 	}
 }
+
 func RegisterCustomer(c *gin.Context) {
 	var customer Models.Customer
 	c.BindJSON(&customer)
